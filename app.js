@@ -26,6 +26,12 @@ app.get("/health", (req, res, next) => {
   res.send("ok");
 });
 
+//UtilityRoutes
+app.get("/ready", (req, res, next) => {
+  res.status(200);
+  res.send("ok");
+});
+
 //EntityRoutes
 for (const route of routes.entityRoutes) {
   app.use("/api/entity", route);
