@@ -5,7 +5,7 @@ dotenv.config();
 const validateAuth = async (req, res, next) => {
   const jwt = req.header("jwt");
 
-  if (!token) {
+  if (!jwt) {
     return res.status(401).json({
       msg: "No token was found in HTTP Request",
     });
@@ -23,4 +23,3 @@ const validateAuth = async (req, res, next) => {
 };
 
 export default validateAuth;
-
